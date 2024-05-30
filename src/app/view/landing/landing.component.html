@@ -1,0 +1,85 @@
+<ngx-snackbar
+  [position]="'top-center'"
+  [max]="1"
+  [timeout]="5000"
+></ngx-snackbar>
+
+<div class="container">
+  <div class="left-column">
+    <div class="layout-content">
+      <div
+        id="layout-bg"
+        [ngStyle]="{ 'background-position-y': backgroundPosition + '%' }"
+      ></div>
+
+      <h1 class="title">
+        {{ landingDetails.title
+        }}<span class="colored-text">{{ landingDetails.highlight }}</span>
+      </h1>
+
+      <p class="paragraph">
+        {{ landingDetails.content }}
+      </p>
+
+      <div
+        id="layout-bg-2"
+        [ngStyle]="{ 'background-position-y': backgroundPosition + '%' }"
+      ></div>
+
+      <form [formGroup]="form">
+        <div class="join-container">
+          <input
+            type="text"
+            formControlName="email"
+            [style.paddingRight]="width + 'px'"
+          />
+          <button class="join-btn" id="joinBtn" (click)="joinWhitelist()">
+            Join whitelist
+          </button>
+        </div>
+        <span class="error" *ngIf="hasError('email', 'pattern')">
+          Invalid email id
+        </span>
+      </form>
+
+      <div class="people-counter" *ngIf="totalUsers">
+        <div class="counter">
+          <h3 class="heading-2">People in our community</h3>
+          <p class="paragraph">+ {{ totalUsers }} people joined</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="thumbnail-section">
+      <div
+        id="thumb-bg"
+        [ngStyle]="{ 'background-position-y': backgroundPosition + '%' }"
+      ></div>
+      <div class="thumbnail-card">
+        <div class="thumbnail-img-container">
+          <figure>
+            <img
+              src="../../assets/shardible/img/Rectangle 26.png"
+              class="thumbnail"
+              alt="no-preview-found"
+            />
+          </figure>
+        </div>
+
+        <div class="thumbnail-content">
+          <p class="paragraph-highlighted">Alternate pathways</p>
+
+          <div class="thumbnail-horizontal">
+            <img
+              class="thumbnail"
+              src="../../assets/shardible/img/Ellipse 6.png"
+              alt="no-preview-found"
+            />
+            <p class="thumbnail-txt paragraph-lighter">Fiatbroke</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

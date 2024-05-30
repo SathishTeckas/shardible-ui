@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="flex-box">
+        <div class="left-column">
+
+            <div class="v-center">
+                <h6 class="heading mb-2">{{ content.title }}</h6>
+    
+                <p class="paragraph mb-4">
+                    {{ content.content }}
+                </p>
+        
+                <button class="shardible-btn">View Collections</button>
+            </div>
+
+        </div>
+    
+        <div class="right-column">
+    
+            <div>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let collection of collections">
+                        <shardible-collections-card [collection]="collection"></shardible-collections-card>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+    
+        </div>
+    </div>
+
+</div>

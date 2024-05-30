@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h6 class="heading mb-3">About Shardible</h6>
+
+    <div class="row g-3">
+
+        <div class="col-md-4" *ngFor="let about of aboutContent">
+            <div class="shardible-card about-card">
+
+                <div class="blob">
+                    <fa-icon class="icons" [icon]="about.icon"></fa-icon>
+                </div>
+
+                <h6 class="heading-2">{{ about.name }}</h6>
+    
+                <p class="paragraph">
+                    {{ about.description }}
+                </p>
+            </div>
+        </div>
+    
+    </div>
+</div>

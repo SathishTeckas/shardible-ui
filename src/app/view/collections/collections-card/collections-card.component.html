@@ -1,0 +1,36 @@
+<div class="thumbnail-card" *ngIf="collection">
+    
+    <div class="thumbnail-img-container">
+        <figure>
+            <img [src]="'../../../../assets/shardible/img/' + collection.thumbnail" class="thumbnail" alt="no-preview-found">
+        </figure>
+    </div>
+
+    <div class="thumbnail-content">
+
+        <p class="paragraph">{{ collection.author.title }}</p> 
+
+        <fa-icon  class="more-icon" [icon]="moreIcon"></fa-icon>
+
+        <div class="thumbnail-horizontal">
+            <img class="thumbnail" [src]="'../../../../assets/shardible/img/' + collection.author.thumb" alt="no-preview-found">
+            <p class="thumbnail-txt paragraph-lighter">{{ collection.author.name }}</p>
+        </div>
+
+
+        <!-- <div class="flex-box">
+            <div class="left-colum">
+                <p class="txt-title">Price</p>
+                <p class="count">{{ collection.price }}</p>
+            </div>
+
+            <div class="right-colum">
+                <p class="txt-title">Highest bid</p>
+                <p class="count">{{ collection.bidRate }}</p>
+            </div>
+        </div> -->
+        
+    </div>
+
+
+</div>
